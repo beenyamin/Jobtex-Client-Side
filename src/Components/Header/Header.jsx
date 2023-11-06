@@ -3,10 +3,11 @@ import logo from "../../assets/logo.svg"
 import { AiOutlineUser } from 'react-icons/ai';
 import { useContext } from "react";
 import { AuthContext } from "../../Hook/AuthProvider";
+import toast from "react-hot-toast";
 
 const Header = () => {
 
-    const { user } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
     const navLink = <>
 
@@ -28,6 +29,16 @@ Requests
         </NavLink> </li>
 
     </>
+    const handelLogout = () => {
+        logOut()
+            .then(() => {
+                toast.success('Successfully Logout')
+            }).catch((error) => {
+                toast.error(error)
+            });
+    }
+
+
 
     return (
         <div className="navbar bg-base-200 py-5 lg:px-10">
@@ -53,18 +64,18 @@ Requests
             <div className="navbar-end">
 
             {
-                user ? 
+                user?.email ? 
                 
                 <div className="dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
-                            <img src={logo} />
+                            <img src={user.photoURL} />
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu  dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Profile</a></li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li><a>{user.displayName}</a></li>
+                        <li><a>{user.email}</a></li>
+                        <li><a onClick={handelLogout}>Logout</a></li>
                     </ul>
                 </div>
                 
