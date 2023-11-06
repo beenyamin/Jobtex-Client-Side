@@ -3,7 +3,7 @@ import app from "./firebase.config";
 import { getAuth } from "firebase/auth";
 
 export const AuthContext = createContext(null);
-const auth = getAuth(app);
+// const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
 
@@ -11,7 +11,8 @@ const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
 
     const AuthInfo = {
-
+        loading,
+        user,
     }
 
     return (
