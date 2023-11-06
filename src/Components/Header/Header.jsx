@@ -66,10 +66,10 @@ Requests
             {
                 user?.email ? 
                 
-                <div className="dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                <div className="dropdown  dropdown-end">
+                    <label tabIndex={0} className="btn border-[#14a077] btn-ghost btn-circle avatar ">
                         <div className="w-10 rounded-full">
-                            <img src={user.photoURL} />
+                            <img  src={user.photoURL} />
                         </div>
                     </label>
                     <ul tabIndex={0} className="menu  dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -82,6 +82,7 @@ Requests
                 : 
 
                            
+              <Link to='login'>
                 <div className="flex items-center text-lg font-semibold hover:text-[#14a077] hover:cursor-pointer">
                     <div className="text-3xl">
                         <AiOutlineUser />
@@ -90,6 +91,7 @@ Requests
                         Login
                     </p>
                 </div>
+              </Link>
 
             }
 
