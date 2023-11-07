@@ -21,9 +21,9 @@ const Benar = () => {
                             </div>
                             <select className="select select-bordered join-item">
                                 <option disabled selected>Filter</option>
-                                <option>Sci-fi</option>
-                                <option>Drama</option>
-                                <option>Action</option>
+                                <option>Web Development</option>
+                                <option>Digital Marketing</option>
+                                <option>Graphics Design</option>
                             </select>
                             <div className="indicator">
                                 <button className="btn join-item">Find Job</button>
