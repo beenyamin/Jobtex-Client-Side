@@ -15,8 +15,8 @@ const Header = () => {
             isPending ? "pending" : isActive ? " text-[#14a077]" : ""}>Home
         </NavLink> </li>
 
-        <li><NavLink to="/addjob" className={({ isActive, isPending }) =>
-            isPending ? "pending" : isActive ? " text-[#14a077]" : ""}>Add job
+        <li><NavLink to="/mypostedjobs" className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? " text-[#14a077]" : ""}>My posted jobs
         </NavLink> </li>
 
         <li><NavLink to="/mybids" className={({ isActive, isPending }) =>
@@ -95,7 +95,9 @@ Requests
 
             }
 
-                <button className="btn lg:w-36 bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white ml-2 lg:ml-5">Post Job</button>
+             <Link to="/addjob">
+             <button className="btn lg:w-36 bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white ml-2 lg:ml-5">Add Job</button>
+             </Link>
             </div>
         </div>
     );
