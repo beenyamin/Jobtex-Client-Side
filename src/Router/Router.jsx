@@ -11,6 +11,7 @@ import BidRequests from "../Pages/BidRequests/BidRequests";
 import MyPostedJobs from "../Pages/MyPostedJobs/MyPostedJobs";
 import PrivateRoute from "./PrivateRoute";
 import UpdatePost from "../Pages/UpdatePost/UpdatePost";
+import Details from "../Pages/details/Details";
 
 
 const router = createBrowserRouter([
@@ -55,6 +56,12 @@ const router = createBrowserRouter([
           path: 'updatepost/:id',
           element: <PrivateRoute><UpdatePost></UpdatePost></PrivateRoute>,
           loader: ({ params }) => fetch(`http://localhost:5000/updatepost/${params.id}`)
+        },
+        {
+          path: 'details/:id',
+          element: <Details></Details>,
+          loader: ({ params }) => fetch(`http://localhost:5000/updatepost/${params.id}`)
+
         }
       ]
     },
