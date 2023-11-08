@@ -9,7 +9,7 @@ const Details = () => {
 
     return (
         <div>
-            <h1>details:{jobTitle}</h1>
+       
             <div>
                 <div className=" lg:card-side bg-base-300 shadow-xl p-10 my-5 space-y-2">
                     

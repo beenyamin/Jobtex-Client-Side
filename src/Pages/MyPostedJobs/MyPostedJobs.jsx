@@ -11,7 +11,7 @@ const MyPostedJobs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/mypostedjobs?email=${user?.email}`, { credentials: 'include' })
+        fetch(`https://assignment-11-server-nu-bay.vercel.app/mypostedjobs?email=${user?.email}`, { credentials: 'include' })
             .then(res => res.json())
             .then(data => setMyPosts(data))
     }, [user?.email])

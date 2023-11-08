@@ -26,7 +26,7 @@ const UpdatePost = () => {
 
         const jobPost = { jobTitle, maximumPrice, minimumPrice, description, date, category, email: user?.email }
 
-        fetch(`http://localhost:5000/updatepost/${_id}`, {
+        fetch(`https://assignment-11-server-nu-bay.vercel.app/updatepost/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

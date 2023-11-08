@@ -19,7 +19,7 @@ const MyJob = ({ myPost, setMyPosts, myPosts }) => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/job/${id}`, {
+        fetch(`https://assignment-11-server-nu-bay.vercel.app/job/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

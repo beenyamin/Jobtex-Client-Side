@@ -9,7 +9,7 @@ const BrowseByCategory = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allpost')
+        fetch('https://assignment-11-server-nu-bay.vercel.app/allpost')
             .then(res => res.json())
             .then(data => setAllJobs(data))
 
@@ -17,7 +17,7 @@ const BrowseByCategory = () => {
 
     return (
         <div>
-            <h1>Browse By Category: {allJobs.length}</h1>
+         
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-5">
                 {
                     allJobs.map(job => <Category
