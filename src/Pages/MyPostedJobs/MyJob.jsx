@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -54,7 +55,9 @@ const MyJob = ({ myPost, setMyPosts, myPosts }) => {
         <p><span className="font-bold">Category:</span> {category}</p>
       </div>
       <div className="card-actions justify-between">
+        <Link to={`/updatepost/${_id}`}>
         <button className="btn bg-[#14a077]  my-5 text-white hover:bg-[#164f3f]">Update</button>
+        </Link>
         <button onClick={() => handelDelete(_id)} className="btn bg-[#a01420]  my-5 text-white hover:bg-[#4f161b]">Delete</button>
       </div>
     </div>
