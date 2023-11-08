@@ -1,7 +1,7 @@
 import Benar from "./Benar";
+import BrowseByCategory from "./BrowseByCategory/BrowseByCategory";
 import GetJob from "./GetJob";
 import JobsAvailable from "./JobsAvailable";
-import Tabs from "./Tabs";
 import What from "./What";
 
 
@@ -10,7 +10,7 @@ const Home = () => {
         <div>
 
             <Benar></Benar>
-            <Tabs></Tabs>
+            <BrowseByCategory></BrowseByCategory>
             <JobsAvailable></JobsAvailable>
             <What></What>
             <GetJob></GetJob>
