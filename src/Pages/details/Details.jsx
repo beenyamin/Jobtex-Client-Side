@@ -20,7 +20,8 @@ const Details = () => {
                     <p><span className="font-bold">Manimum Price:</span> {minimumPrice}$ </p>
                     <p><span className="font-bold">Date:</span> {date} </p>
                     <p><span className="font-bold">Email:</span> {email} </p>
-                    <p><span className="font-bold">Description:</span> {description} </p>
+                    <p><span className="font-bold">Job Description:</span>
+                     {description} </p>
                     </div>
                 </div>
             </div>
