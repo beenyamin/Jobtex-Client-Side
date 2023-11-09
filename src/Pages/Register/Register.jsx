@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../../Hook/AuthProvider";
 import { AiFillGoogleCircle, AiOutlineGithub } from "react-icons/ai";
 import { BsFacebook } from "react-icons/bs";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
@@ -76,7 +77,9 @@ const Register = () => {
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:place-items-center bg-base-100 ">
-
+            <Helmet>
+                <title>JobTex | Register</title>
+            </Helmet>
             <div className="rounded-lg p-10 w-full" >
                 <form onSubmit={handelRegister} >
                     <p className="text-[#33967c]  text-2xl font-bold">Create a free jobtex account</p>
@@ -121,16 +124,16 @@ const Register = () => {
                     <input className="btn btn-block bg-[#14a077]  my-5 text-white hover:bg-[#164f3f]" type="submit" value="Register Now" />
 
                 </form>
-                
+
                 <div className=" lg:flex items-center justify-around w-full mx-auto">
-                   <div className="">
-                   <p className="font-bold text-lg text-center">Or Register With..</p>
-                   <button onClick={handelGoogleRegister} className="btn rounded-full my-5 text-3xl  bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white"><AiFillGoogleCircle /></button>
+                    <div className="">
+                        <p className="font-bold text-lg text-center">Or Register With..</p>
+                        <button onClick={handelGoogleRegister} className="btn rounded-full my-5 text-3xl  bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white"><AiFillGoogleCircle /></button>
 
-                   <button className="btn rounded-full my-5 text-3xl  bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white mx-5"> <BsFacebook/> </button>
+                        <button className="btn rounded-full my-5 text-3xl  bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white mx-5"> <BsFacebook /> </button>
 
-                   <button className="btn rounded-full my-5 text-3xl  bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white"> <AiOutlineGithub/> </button>
-                   </div>
+                        <button className="btn rounded-full my-5 text-3xl  bg-white border border-[#14a077] hover:bg-[#14a077] hover:text-white"> <AiOutlineGithub /> </button>
+                    </div>
 
                     <p>Already have an account please <Link className="text-[#33967c] font-bold" to={'/login'}>Login</Link></p>
 

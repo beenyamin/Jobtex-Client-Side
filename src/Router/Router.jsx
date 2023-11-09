@@ -55,12 +55,12 @@ const router = createBrowserRouter([
         {
           path: 'updatepost/:id',
           element: <PrivateRoute><UpdatePost></UpdatePost></PrivateRoute>,
-          loader: ({ params }) => fetch(`https://assignment-11-server-nu-bay.vercel.app/updatepost/${params.id}`)
+          loader: ({ params }) => fetch(`http://localhost:5000/updatepost/${params.id}`)
         },
         {
           path: 'details/:id',
           element: <Details></Details>,
-          loader: ({ params }) => fetch(`https://assignment-11-server-nu-bay.vercel.app/updatepost/${params.id}`)
+          loader: ({ params }) => fetch(`http://localhost:5000/updatepost/${params.id}`)
 
         }
       ]

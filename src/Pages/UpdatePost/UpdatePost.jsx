@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Hook/AuthProvider";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet-async";
 
 
 const UpdatePost = () => {
@@ -26,7 +27,7 @@ const UpdatePost = () => {
 
         const jobPost = { jobTitle, maximumPrice, minimumPrice, description, date, category, email: user?.email }
 
-        fetch(`https://assignment-11-server-nu-bay.vercel.app/updatepost/${_id}`, {
+        fetch(`http://localhost:5000/updatepost/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -47,6 +48,9 @@ const UpdatePost = () => {
 
     return (
         <div>
+            <Helmet>
+               <title>JobTex | Update Post</title>
+            </Helmet>
             <form onSubmit={handelUpdate} className="card-body">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 

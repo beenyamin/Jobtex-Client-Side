@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -9,10 +10,12 @@ const Details = () => {
 
     return (
         <div>
-       
+
             <div>
                 <div className=" lg:card-side bg-base-300 shadow-xl p-10 my-5 space-y-2">
-                    
+                    <Helmet>
+                        <title>JobTex | {jobTitle}</title>
+                    </Helmet>
 
                     <h1 className="text-2xl font-bold text-green-700">Job Title: {jobTitle}</h1>
                     <p><span className="font-bold">Category:</span> {category} </p>
@@ -21,11 +24,11 @@ const Details = () => {
                     <p><span className="font-bold">Date:</span> {date} </p>
                     <p><span className="font-bold">Email:</span> {email} </p>
                     <p><span className="font-bold">Job Description:</span>
-                     {description} </p>
-                    </div>
+                        {description} </p>
                 </div>
             </div>
-  
+        </div>
+
     );
 };
 

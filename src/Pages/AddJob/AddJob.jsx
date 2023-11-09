@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Hook/AuthProvider";
 import toast from "react-hot-toast";
 import {  useLocation, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const AddJob = () => {
@@ -23,7 +24,7 @@ const AddJob = () => {
         const jobPost = { jobTitle, maximumPrice, minimumPrice, description, date, category, email: user?.email }
         console.log(jobPost)
 
-        fetch('https://assignment-11-server-nu-bay.vercel.app/jobPosts', {
+        fetch('http://localhost:5000/jobPosts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,7 +51,9 @@ const AddJob = () => {
     return (
         <div>
 
-
+        <Helmet>
+            <title>JobTex | Add Job</title>
+        </Helmet>
             <form onSubmit={handelAddJob} className="card-body">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
 

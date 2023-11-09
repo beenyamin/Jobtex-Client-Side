@@ -9,7 +9,7 @@ const BrowseByCategory = () => {
 
 
     useEffect(() => {
-        fetch('https://assignment-11-server-nu-bay.vercel.app/allpost')
+        fetch('http://localhost:5000/allpost')
             .then(res => res.json())
             .then(data => setAllJobs(data))
 

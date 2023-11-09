@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { useContext } from "react";
 import { AuthContext } from "../../Hook/AuthProvider";
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
 
@@ -32,7 +33,7 @@ const Login = () => {
                 console.log(res.user)
                 const user = { email };
 
-                axios.post('https://assignment-11-server-nu-bay.vercel.app/user', user, { withCredentials: true })
+                axios.post('http://localhost:5000/user', user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         if (res.data.success) {
@@ -56,14 +57,14 @@ const Login = () => {
             .then(res => {
                 const loggedInUser = res.user.email
                 const user = { email: loggedInUser };
-                axios.post('https://assignment-11-server-nu-bay.vercel.app/user', user, { withCredentials: true })
-                .then(res => {
-                    console.log(res.data)
-                    if (res.data.success) {
-                        navigate(location?.state ? location?.state : '/')
-                        toast.success('Successfully Login!')
-                    }
-                })
+                axios.post('http://localhost:5000/user', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data)
+                        if (res.data.success) {
+                            navigate(location?.state ? location?.state : '/')
+                            toast.success('Successfully Login!')
+                        }
+                    })
             })
             .catch(error => {
                 if (error) {
@@ -78,7 +79,9 @@ const Login = () => {
 
     return (
         <div className="grid grid-cols-1 lg:grid-cols-2 lg:place-items-center bg-base-100 ">
-
+            <Helmet>
+                <title>JobTex | Login</title>
+            </Helmet>
             <div className="rounded-lg p-10 w-full" >
                 <form onSubmit={handelLogin} >
                     <p className="text-[#33967c]  text-2xl font-bold">Login to jobtex</p>

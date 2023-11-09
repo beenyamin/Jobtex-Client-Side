@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -19,7 +20,7 @@ const MyJob = ({ myPost, setMyPosts, myPosts }) => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`https://assignment-11-server-nu-bay.vercel.app/job/${id}`, {
+        fetch(`http://localhost:5000/job/${id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
@@ -48,6 +49,7 @@ const MyJob = ({ myPost, setMyPosts, myPosts }) => {
 
   return (
     <div className="px-5 pt-5 rounded-lg  bg-[#c6e5eb] ">
+
       <div className="space-y-2">
         <h2 className="card-title text-emerald-600 text-2xl">{jobTitle}</h2>
         <p> <span className="font-bold">Maximum Price:</span> ${maximumPrice}</p>
@@ -56,7 +58,7 @@ const MyJob = ({ myPost, setMyPosts, myPosts }) => {
       </div>
       <div className="card-actions justify-between">
         <Link to={`/updatepost/${_id}`}>
-        <button className="btn bg-[#14a077]  my-5 text-white hover:bg-[#164f3f]">Update</button>
+          <button className="btn bg-[#14a077]  my-5 text-white hover:bg-[#164f3f]">Update</button>
         </Link>
         <button onClick={() => handelDelete(_id)} className="btn bg-[#a01420]  my-5 text-white hover:bg-[#4f161b]">Delete</button>
       </div>
