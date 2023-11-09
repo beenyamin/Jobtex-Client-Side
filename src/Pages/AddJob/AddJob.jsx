@@ -24,7 +24,7 @@ const AddJob = () => {
         const jobPost = { jobTitle, maximumPrice, minimumPrice, description, date, category, email: user?.email }
         console.log(jobPost)
 
-        fetch('http://localhost:5000/jobPosts', {
+        fetch('https://assignment-11-server-nu-bay.vercel.app/jobPosts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

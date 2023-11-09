@@ -6,6 +6,7 @@ const Category = ({ job }) => {
 
     const { _id, jobTitle, maximumPrice, minimumPrice, description, date, category, email } = job
 
+
     return (
         <div className="px-5 pt-5 rounded-lg  bg-[#c6e5eb] ">
             <div className="space-y-2">
@@ -18,7 +19,10 @@ const Category = ({ job }) => {
                 <Link to={`/details/${_id}`}>
                     <button className="btn bg-[#14a077]  my-5 text-white hover:bg-[#164f3f]">details</button>
                 </Link>
-                <button className="btn bg-[#a01420]  my-5 text-white hover:bg-[#4f161b]">Bit</button>
+                <Link  to={`/details/${_id}`}>
+                    <button className="btn bg-[#a01420]  my-5 text-white hover:bg-[#4f161b]">Bit</button>
+                </Link>
+
             </div>
         </div>
     );

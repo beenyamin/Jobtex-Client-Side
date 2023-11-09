@@ -46,13 +46,13 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             setLoading(false);
             if (currentUser) {
-                axios.post('http://localhost:5000/user', loggedUser, { withCredentials: true })
+                axios.post('https://assignment-11-server-nu-bay.vercel.app/user', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('token response', res.data);
                     })
             }
             else {
-                axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
+                axios.post('https://assignment-11-server-nu-bay.vercel.app/logout', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })
